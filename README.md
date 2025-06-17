@@ -11,14 +11,12 @@ Este proyecto es un sistema de fichaje de empleados desarrollado en Laravel, con
 
 ## Instalación de MySQL
 
-1. Descarga e instala MySQL desde [mysql.com](https://dev.mysql.com/downloads/) o usa XAMPP/Laragon que incluye MySQL
-2. Inicia el servicio MySQL
+1. Descarga e instala MySQL desde [mysql.com](https://dev.mysql.com/downloads/) o usa XAMPP/Laragon que incluye MySQL.
+2. Inicia el servicio MySQL.
 3. Crea la base de datos:
 
-   ```bash
-   mysql -u root -p
+   ```sql
    CREATE DATABASE sistema_fichaje;
-   exit;
    ```
 
    O si prefieres usar phpMyAdmin (incluido en XAMPP/Laragon):
@@ -29,7 +27,7 @@ Este proyecto es un sistema de fichaje de empleados desarrollado en Laravel, con
 
 1. Clona el repositorio:
    ```bash
-   git clone <REPO_URL>
+   git clone https://github.com/titicuevas/prueba_optima.git
    cd sistema-fichaje-nuevo
    ```
 
@@ -48,7 +46,7 @@ Este proyecto es un sistema de fichaje de empleados desarrollado en Laravel, con
    cp .env.example .env
    ```
    Edita el archivo `.env` y configura:
-   ```
+   ```env
    DB_DATABASE=sistema_fichaje
    DB_USERNAME=root
    DB_PASSWORD=tu_contraseña
@@ -70,9 +68,12 @@ Este proyecto es un sistema de fichaje de empleados desarrollado en Laravel, con
    ```bash
    php artisan db:seed
    ```
-3. (Opcional) Para regenerar toda la base de datos y usar los seeders.:
-``` php artisan migrate:refresh --seed
-```
+
+3. (Opcional) Para regenerar toda la base de datos y usar los seeders:
+   ```bash
+   php artisan migrate:refresh --seed
+   ```
+
 ## Compilar assets (CSS/JS)
 
 Para producción:
@@ -92,7 +93,7 @@ Inicia el servidor de desarrollo de Laravel:
 php artisan serve
 ```
 
-Accede a [http://localhost:8000]
+Accede a [http://localhost:8000](http://localhost:8000)
 
 ## Script SQL independiente
 
@@ -100,10 +101,10 @@ Si prefieres importar la base de datos manualmente, usa el archivo `script_ficha
 
 ## Notas adicionales
 
-- El sistema es responsive y accesible
-- Incluye feedback visual con SweetAlert y badges dinámicos
-- Código organizado y fácil de mantener
-- Soporte para múltiples navegadores modernos
+- El sistema es responsive y accesible.
+- Incluye feedback visual con SweetAlert y badges dinámicos.
+- Código organizado y fácil de mantener.
+- Soporte para múltiples navegadores modernos.
 
 ---
 
