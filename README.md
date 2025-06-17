@@ -72,7 +72,7 @@ Este proyecto es un sistema de fichaje de empleados desarrollado en Laravel, con
    ```
 3. (Opcional) Para regenerar toda la base de datos y usar los seeders.:
 ``` php artisan migrate:refresh --seed
-````
+```
 ## Compilar assets (CSS/JS)
 
 Para producción:
