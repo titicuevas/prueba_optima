@@ -1,0 +1,211 @@
+/* Estilos personalizados para el sistema de fichaje */
+
+/* Aquí se irán moviendo los estilos de badges, animaciones, tablas, etc. */
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3em;
+    padding: 0.2em 1em;
+    border-radius: 9999px;
+    font-size: 0.85em;
+    font-weight: 700;
+    margin-left: 0;
+    min-width: 110px;
+    justify-content: center;
+    white-space: nowrap;
+    transition: background 0.2s, color 0.2s, font-size 0.2s;
+}
+.badge-entrada { background: #f59e42; color: #fff; }
+.badge-completo { background: #7c3aed; color: #fff; }
+.badge-ninguno { background: #3b82f6; color: #fff; }
+
+@media (max-width: 640px) {
+  .badge {
+    font-size: 0.75em;
+    padding: 0.15em 0.7em;
+    min-width: 80px;
+  }
+  .table-responsive th:nth-child(3),
+  .table-responsive td:nth-child(3),
+  .table-responsive th:nth-child(4),
+  .table-responsive td:nth-child(4) {
+    display: none !important;
+  }
+  .table-responsive {
+    font-size: 0.92em;
+  }
+  .fichar-btn {
+    font-size: 0.85em;
+    padding: 0.5em 0.7em;
+  }
+  .card-responsive {
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+  }
+}
+
+.resaltado-fila {
+    background-color: #fef9c3 !important;
+    transition: background-color 0.7s;
+}
+
+/* Mensajes de feedback visual */
+.feedback-success {
+    background: #bbf7d0;
+    color: #166534;
+    border-left: 6px solid #22c55e;
+    padding: 0.75em 1.2em;
+    border-radius: 0.75em;
+    font-weight: 600;
+    margin-bottom: 1em;
+    box-shadow: 0 2px 8px 0 rgba(34,197,94,0.08);
+    text-align: center;
+}
+.feedback-error {
+    background: #fecaca;
+    color: #991b1b;
+    border-left: 6px solid #ef4444;
+    padding: 0.75em 1.2em;
+    border-radius: 0.75em;
+    font-weight: 600;
+    margin-bottom: 1em;
+    box-shadow: 0 2px 8px 0 rgba(239,68,68,0.08);
+    text-align: center;
+}
+.feedback-warning {
+    background: #fef08a;
+    color: #92400e;
+    border-left: 6px solid #f59e42;
+    padding: 0.75em 1.2em;
+    border-radius: 0.75em;
+    font-weight: 600;
+    margin-bottom: 1em;
+    box-shadow: 0 2px 8px 0 rgba(245,158,66,0.08);
+    text-align: center;
+}
+
+/* Animaciones y transiciones */
+@keyframes slideIn {
+    from { transform: translateY(-20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Mejora de feedback visual con animaciones */
+.feedback-success,
+.feedback-error,
+.feedback-warning {
+    animation: slideIn 0.3s ease-out;
+    position: relative;
+    overflow: hidden;
+}
+
+.feedback-success::after,
+.feedback-error::after,
+.feedback-warning::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    animation: slideIn 0.3s ease-out;
+}
+
+/* Sistema de notificaciones toast */
+.toast-container {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 9999;
+}
+
+.toast {
+    background: white;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    animation: slideIn 0.3s ease-out;
+    min-width: 300px;
+}
+
+.toast-success {
+    border-left: 4px solid #22c55e;
+}
+
+.toast-error {
+    border-left: 4px solid #ef4444;
+}
+
+.toast-warning {
+    border-left: 4px solid #f59e42;
+}
+
+/* Microinteracciones */
+.hover-scale {
+    transition: transform 0.2s ease;
+}
+
+.hover-scale:hover {
+    transform: scale(1.05);
+}
+
+/* Mejoras de accesibilidad */
+[role="button"],
+[role="link"] {
+    cursor: pointer;
+}
+
+[aria-disabled="true"] {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Tema oscuro */
+@media (prefers-color-scheme: dark) {
+    .dark-mode {
+        background: #1a1a1a;
+        color: #ffffff;
+    }
+
+    .dark-mode .bg-white {
+        background: #2d2d2d;
+        color: #ffffff;
+    }
+
+    .dark-mode .text-gray-700 {
+        color: #e5e5e5;
+    }
+
+    .dark-mode .border-blue-100 {
+        border-color: #404040;
+    }
+
+    .dark-mode .hover\:bg-blue-50:hover {
+        background-color: #404040;
+    }
+}
+
+/* Mejoras responsive */
+@media (max-width: 640px) {
+    .toast {
+        min-width: auto;
+        width: calc(100vw - 2rem);
+    }
+    
+    .feedback-success,
+    .feedback-error,
+    .feedback-warning {
+        font-size: 0.9rem;
+        padding: 0.5rem 1rem;
+    }
+} 

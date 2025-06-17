@@ -1,0 +1,25 @@
+/* Utilidades responsive personalizadas */
+
+/* Ocultar columna de acciones en móvil */
+@media (max-width: 640px) {
+  .col-acciones {
+    display: none !important;
+  }
+}
+
+/* Ajustar padding de la tarjeta en móvil */
+@media (max-width: 640px) {
+  .card-responsive {
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+  }
+}
+
+/* Hacer la tabla más pequeña en móvil */
+@media (max-width: 640px) {
+  .table-responsive td, .table-responsive th {
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+    font-size: 0.85rem !important;
+  }
+}
